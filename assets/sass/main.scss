@@ -95,29 +95,6 @@
 		appearance: none;
 	}
 
-/* Custom */
-.l-plate {
-    font-weight: bold;
-    color: black;
-    background-color: #ffef00;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-family: Arial;
-    font-size: 4.1rem;
-    border: solid 2px white !important;
-    border-radius: _size(border-radius);
-    border-radius: 0.1em;
-}
-
-h1 {
-    font-size: 3em;
-    text-shadow: 3px 3px 5px #000000e5;
-}
-
-
-
 /* Basic */
 
 	// Set box model to border-box.
@@ -1142,9 +1119,10 @@ h1 {
 	#header {
 		@include padding(9em, 0, (0,0,_size(element-margin),0));
 		@include dark(#4686a0);
-		background-image:		url('../../images/jimmy.jpg');
-		background-position:	center center;
-		background-size:		cover;
+		background-attachment:	fixed,							fixed,							fixed;
+		background-image:		url('images/overlay2.png'),		url('images/overlay3.svg'),		linear-gradient(45deg, _palette(accent1-alt) 5%, _palette(accent3-alt) 30%, _palette(accent6-alt));
+		background-position:	top left,						center center,					center center;
+		background-size:		auto,							cover,							cover;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
@@ -1176,8 +1154,7 @@ h1 {
 				left: 50%;
 				position: absolute;
 				top: 100%;
-				width: 2px;
-                z-index: -1;
+				width: 1px;
 			}
 		}
 
