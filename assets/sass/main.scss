@@ -136,7 +136,7 @@
 
 		&:hover {
 			border-bottom-color: transparent !important;
-			color: _palette(accent3);
+			color: _palette(primary);
 		}
 	}
 
@@ -429,7 +429,7 @@
 		}
 
 		&:focus {
-			border-color: _palette(accent3);
+			border-color: _palette(primary);
 		}
 	}
 
@@ -470,7 +470,7 @@
 	}
 
 	input[type="checkbox"],
-	input[type="radio"], {
+	input[type="radio"] {
 		@include vendor('appearance', 'none');
 		display: block;
 		float: left;
@@ -518,7 +518,7 @@
 
 		&:focus + label {
 			&:before {
-				border-color: _palette(accent3);
+				border-color: _palette(primary);
 			}
 		}
 	}
@@ -607,12 +607,8 @@
 			}
 		}
 
-		&.style1 { &:before { color: _palette(accent1); } }
-		&.style2 { &:before { color: _palette(accent2); } }
-		&.style3 { &:before { color: _palette(accent3); } }
-		&.style4 { &:before { color: _palette(accent4); } }
-		&.style5 { &:before { color: _palette(accent5); } }
-		&.style6 { &:before { color: _palette(accent6); } }
+		&.primary { &:before { color: _palette(primary); } }
+		&.secondary { &:before { color: _palette(secondary); } }
 
 		&.major {
 			@include icon;
@@ -1102,14 +1098,14 @@
 	.main {
 		@include padding(6em, 0);
 
-		&.style1 {
+		&.primary {
 			background: _palette(bg);
 		}
 
-		&.style2 {
+		&.secondary {
 			@include dark(#333);
 			background-attachment:	fixed,							fixed;
-			background-image:		url('images/overlay1.png'),		url('../../images/header.jpg');
+			background-image:		url('../../images/header.jpg');
 			background-size:		auto,							cover;
 		}
 	}
@@ -1120,7 +1116,7 @@
 		@include padding(9em, 0, (0,0,_size(element-margin),0));
 		@include dark(#4686a0);
 		background-attachment:	fixed,							fixed,							fixed;
-		background-image:		url('images/overlay2.png'),		url('images/overlay3.svg'),		linear-gradient(45deg, _palette(accent1-alt) 5%, _palette(accent3-alt) 30%, _palette(accent6-alt));
+		background-image:		linear-gradient(45deg, _palette(primary) 5%, _palette(secondary));
 		background-position:	top left,						center center,					center center;
 		background-size:		auto,							cover,							cover;
 		overflow: hidden;
@@ -1176,7 +1172,7 @@
 
 		&:after {
 			@include vendor('transition', 'opacity 1s ease');
-			background-image: linear-gradient(45deg, _palette(accent3-alt), _palette(accent6-alt));
+			background-image: linear-gradient(45deg, _palette(primary), _palette(secondary));
 			content: '';
 			height: 100%;
 			left: 0;
@@ -1211,7 +1207,7 @@
 		@include padding(6em, 0, (0,0,_size(element-margin),0));
 		@include dark(#4686a0);
 		background-attachment:	fixed,							fixed,							fixed;
-		background-image:		url('images/overlay2.png'),		url('images/overlay4.svg'),		linear-gradient(45deg, _palette(accent6-alt), _palette(accent3-alt) 50%, _palette(accent1-alt) 95%);
+		background-image:		linear-gradient(45deg, _palette(primary), _palette(secondary) 95%);
 		background-position:	top left,						center center,					center center;
 		background-size:		auto,							cover,							cover;
 		text-align: center;
@@ -1297,7 +1293,7 @@
 			.main {
 				@include padding(4em, 0);
 
-				&.style2 {
+				&.secondary {
 					background-attachment: scroll;
 				}
 			}
