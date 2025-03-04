@@ -1833,10 +1833,10 @@ input[type=radio] + label:before {
   font-family: "Font Awesome 5 Brands";
 }
 .icon.primary:before {
-  color: #0a0f3d;
+  background-color: #0a0f3d;
 }
 .icon.secondary:before {
-  color: #008fd3;
+  background-color: #1a719b;
 }
 .icon.major {
   text-decoration: none;
@@ -2227,7 +2227,7 @@ input[type=reset].primary,
 input[type=button].primary,
 button.primary,
 .button.primary {
-  background-color: #555;
+  background-color: #0a0f3d;
   box-shadow: none !important;
   color: #fff !important;
 }
@@ -2236,14 +2236,14 @@ input[type=reset].primary:hover,
 input[type=button].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-  background-color: rgb(97.75, 97.75, 97.75);
+  background-color: #1a719b;
 }
 input[type=submit].primary:active,
 input[type=reset].primary:active,
 input[type=button].primary:active,
 button.primary:active,
 .button.primary:active {
-  background-color: rgb(72.25, 72.25, 72.25);
+  background-color: #1a719b;
 }
 input[type=submit].disabled, input[type=submit]:disabled,
 input[type=reset].disabled,
@@ -2323,7 +2323,7 @@ button:disabled,
 .main.secondary input[type=button].primary:hover,
 .main.secondary button.primary:hover,
 .main.secondary .button.primary:hover {
-  background-color: rgba(255, 255, 255, 0.125) !important;
+  background-color: #1a719b !important;
   color: #ffffff !important;
 }
 .main.secondary input[type=submit].primary:active,
@@ -2331,7 +2331,7 @@ button:disabled,
 .main.secondary input[type=button].primary:active,
 .main.secondary button.primary:active,
 .main.secondary .button.primary:active {
-  background-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: #1a719b !important;
 }
 .main.secondary ul.major-icons li .icon {
   border-color: #ffffff;
@@ -2343,12 +2343,12 @@ button:disabled,
 /* Header */
 #header {
   padding: 9em 0 9em 0;
-  background-color: #4686a0;
+  background-color: #555;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background-image: linear-gradient(45deg, #0a0f3d 5%, #008fd3);
-  background-position: top left, center center, center center;
-  background-size: auto, cover, cover;
+  background-image: url("../../images/header.jpg");
+  background-position: center;
+  background-size: cover;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -2397,14 +2397,14 @@ button:disabled,
 #header .button.primary {
   background-color: #ffffff;
   box-shadow: inset 0 0 0 1px #ffffff !important;
-  color: #4686a0 !important;
+  color: #555 !important;
 }
 #header input[type=submit].primary:hover,
 #header input[type=reset].primary:hover,
 #header input[type=button].primary:hover,
 #header button.primary:hover,
 #header .button.primary:hover {
-  background-color: rgba(255, 255, 255, 0.125) !important;
+  background-color: #1a719b !important;
   color: #ffffff !important;
 }
 #header input[type=submit].primary:active,
@@ -2412,7 +2412,7 @@ button:disabled,
 #header input[type=button].primary:active,
 #header button.primary:active,
 #header .button.primary:active {
-  background-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: #1a719b !important;
 }
 #header ul.major-icons li .icon {
   border-color: #ffffff;
@@ -2484,7 +2484,7 @@ button:disabled,
   -webkit-transition: opacity 1s ease;
   -ms-transition: opacity 1s ease;
   transition: opacity 1s ease;
-  background-image: linear-gradient(45deg, #0a0f3d, #008fd3);
+  background-image: linear-gradient(45deg, #0a0f3d, #1a719b);
   content: "";
   height: 100%;
   left: 0;
@@ -2515,10 +2515,10 @@ body.is-preload #header:after {
 /* Footer */
 #footer {
   padding: 6em 0 6em 0;
-  background-color: #4686a0;
+  background-color: #555;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background-image: linear-gradient(45deg, #0a0f3d, #008fd3 95%);
+  background-image: linear-gradient(45deg, #0a0f3d, #1a719b 95%);
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   text-align: center;
@@ -2567,14 +2567,14 @@ body.is-preload #header:after {
 #footer .button.primary {
   background-color: #ffffff;
   box-shadow: inset 0 0 0 1px #ffffff !important;
-  color: #4686a0 !important;
+  color: #555 !important;
 }
 #footer input[type=submit].primary:hover,
 #footer input[type=reset].primary:hover,
 #footer input[type=button].primary:hover,
 #footer button.primary:hover,
 #footer .button.primary:hover {
-  background-color: rgba(255, 255, 255, 0.125) !important;
+  background-color: #1a719b !important;
   color: #ffffff !important;
 }
 #footer input[type=submit].primary:active,
@@ -2582,7 +2582,7 @@ body.is-preload #header:after {
 #footer input[type=button].primary:active,
 #footer button.primary:active,
 #footer .button.primary:active {
-  background-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: #1a719b !important;
 }
 #footer ul.major-icons li .icon {
   border-color: #ffffff;
@@ -2808,6 +2808,10 @@ body.is-preload #header:after {
   #footer {
     padding: 2em 1em 2em 1em;
   }
+}
+/* custom */
+.logo {
+  width: 8em;
 }
 
 /*# sourceMappingURL=main.css.map */

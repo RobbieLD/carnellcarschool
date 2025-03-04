@@ -607,8 +607,8 @@
 			}
 		}
 
-		&.primary { &:before { color: _palette(primary); } }
-		&.secondary { &:before { color: _palette(secondary); } }
+		&.primary { &:before { background-color: _palette(primary); } }
+		&.secondary { &:before { background-color: _palette(secondary); } }
 
 		&.major {
 			@include icon;
@@ -994,16 +994,16 @@
 		}
 
 		&.primary {
-			background-color: _palette(fg-bold);
+			background-color: _palette(primary);
 			box-shadow: none !important;
 			color: _palette(bg) !important;
 
 			&:hover {
-				background-color: lighten(_palette(fg-bold), 5);
+				background-color: _palette(secondary);
 			}
 
 			&:active {
-				background-color: darken(_palette(fg-bold), 5);
+				background-color: _palette(secondary);
 			}
 		}
 
@@ -1066,12 +1066,12 @@
 				color: $color-this-bg !important;
 
 				&:hover {
-					background-color: _palette(dark, border-bg) !important;
+					background-color: _palette(secondary) !important;
 					color: _palette(dark, fg-bold) !important;
 				}
 
 				&:active {
-					background-color: _palette(dark, border2-bg) !important;
+					background-color: _palette(secondary) !important;
 				}
 			}
 		}
@@ -1114,11 +1114,11 @@
 
 	#header {
 		@include padding(9em, 0, (0,0,_size(element-margin),0));
-		@include dark(#4686a0);
+		@include dark(_palette(fg-bold));
 		background-attachment:	fixed,							fixed,							fixed;
-		background-image:		linear-gradient(45deg, _palette(primary) 5%, _palette(secondary));
-		background-position:	top left,						center center,					center center;
-		background-size:		auto,							cover,							cover;
+		background-image:		url('../../images/header.jpg');
+		background-position:	center;
+		background-size:		cover;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
@@ -1205,7 +1205,7 @@
 
 	#footer {
 		@include padding(6em, 0, (0,0,_size(element-margin),0));
-		@include dark(#4686a0);
+		@include dark(_palette(fg-bold));
 		background-attachment:	fixed,							fixed,							fixed;
 		background-image:		linear-gradient(45deg, _palette(primary), _palette(secondary) 95%);
 		background-position:	top left,						center center,					center center;
@@ -1540,3 +1540,8 @@
 			}
 
 	}
+
+/* custom */
+.logo {
+	width: 8em;
+}
