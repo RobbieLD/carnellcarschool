@@ -4,11 +4,76 @@ body {
     margin: 0;
 }
 
-nav {
+.body {
     display: grid;
-    grid-auto-flow: column;
+    grid-template-rows: 8em auto auto 20em;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    font-family: system-ui;
+    padding: 2em;
+}
+
+
+.footer {
+    background-color: bisque;
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.main {
+    background-color: chartreuse;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* hero */
+
+.hero {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+}
+
+.banner {
+    width: 100%;
+    border-radius: 2em;
+    justify-self: center;
+}
+
+
+/* Nav */
+
+.nav {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    margin-bottom: 1em;
 }
 
 .logo {
-    width: 5em;
+    width: 6em;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.menu {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    font-size: 1.2em;
+    justify-self: end;
+    grid-column: 3;
+    grid-row: 1;
+    max-width: 40em;
+    width: 100%;
+    justify-items: end;
+}
+
+/* Common */
+a {
+    text-decoration: none;
+    color: black;
 }
