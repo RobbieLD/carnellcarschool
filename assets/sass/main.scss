@@ -1,3 +1,17 @@
+@import url('fontawesome-all.min.css');
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
+
+/* vars */
+$primary-color: #082F59;
+$secondary-color: #0E4258;
+$accent-color: #ff6400;
+$on-primary-color: white;
+$on-secondary-color: white;
+$on-accent-color: white;
+
+$site-width: 1600px;
+
+
 html,
 body {
     padding: 0;
@@ -9,21 +23,27 @@ body {
     grid-template-rows: 8em auto auto 20em;
     grid-template-columns: 1fr;
     min-height: 100vh;
-    font-family: system-ui;
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
     padding: 2em;
+    margin: auto;
+    max-width: $site-width;
 }
 
 
 .footer {
-    background-color: bisque;
     grid-column: 1;
     grid-row: 4;
 }
 
 .main {
-    background-color: chartreuse;
     grid-column: 1;
     grid-row: 3;
+    height: 50em;
+
+    /* TEMP */
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 /* hero */
@@ -36,8 +56,17 @@ body {
 
 .banner {
     width: 100%;
-    border-radius: 2em;
     justify-self: center;
+
+    &--hero {
+        border-top-left-radius: 2em;
+        border-top-right-radius: 2em;
+    }
+
+    &--footer {
+        border-bottom-left-radius: 2em;
+        border-bottom-right-radius: 2em;
+    }
 }
 
 
@@ -73,7 +102,58 @@ body {
 }
 
 /* Common */
+
+.button {
+    padding-top: 0.3em;
+    padding-bottom: 0.4em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 0.3em;
+    color: $primary-color;
+    font-size: 1.2em;
+
+    &:hover {
+        background-color: $primary-color;
+        color: $on-primary-color;
+    }
+
+    &:active {
+        color: $accent-color;
+    }
+}
+
 a {
     text-decoration: none;
-    color: black;
+}
+
+
+/* Special */
+.contact {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.2em;
+    font-size: 1.2em;
+
+    i {
+        padding-top: 0.3em;
+        padding-bottom: 0.4em;
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: $primary-color;
+        color: $on-primary-color;
+
+        &:hover {
+            color: $accent-color;
+        }
+
+        &:last-child {
+            border-top-right-radius: 0.3em;
+            border-bottom-right-radius: 0.3em;
+        }
+
+        &:first-child {
+            border-top-left-radius: 0.3em;
+            border-bottom-left-radius: 0.3em;
+        }
+    }
 }
