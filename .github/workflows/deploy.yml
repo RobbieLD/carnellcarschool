@@ -35,21 +35,19 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Compile SASS
+        uses: gha-utilities/sass-build@v0.6.0
         with:
-          node-version: 21
-
-      - name: Install Deps
-        run: npm install
-
-      - name: Build Site      
-        run: npm run build
+          source: |
+            assets/sass/main.scss
+          destination: |
+            assets/css/main.css
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          # Upload entire repository
+          path: '.'
           
       - name: Deploy to GitHub Pages
         id: deployment
