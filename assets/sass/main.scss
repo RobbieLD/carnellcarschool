@@ -30,6 +30,9 @@ body {
 
 
 .footer {
+    i {
+        padding-right: 0.3em;
+    }
     grid-column: 1;
     grid-row: 4;
     background-image: url(/images/footer_large.png);
@@ -44,8 +47,7 @@ body {
     justify-content: start;
     color: #cecece;
     font-size: 0.8em;
-    padding-bottom: 2em;
-    padding-left: 2em;
+    padding: 2em;
     gap: 0.5em;
 }
 
