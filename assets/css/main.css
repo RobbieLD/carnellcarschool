@@ -21,6 +21,12 @@ body {
 .footer {
   grid-column: 1;
   grid-row: 4;
+  background-image: url("images/footer_large.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  background-position: bottom;
 }
 
 .main {
@@ -98,8 +104,7 @@ body {
   color: white;
 }
 .button:active {
-  background-color: #ff6400;
-  color: white;
+  color: #ff6400;
 }
 
 a {
