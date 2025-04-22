@@ -64,7 +64,7 @@ body {
 .profile__intro {
   grid-column: 2;
   grid-row: 1;
-  background: linear-gradient(#1c84b0, #082F59);
+  background: linear-gradient(#047eb3, #082F59);
   padding: 2em;
   display: grid;
   grid-auto-flow: column;
@@ -183,7 +183,7 @@ body {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
-  background: linear-gradient(220deg, #1c84b0, #082F59);
+  background: linear-gradient(220deg, #047eb3, #082F59);
   color: white;
   padding: 3em;
   border-radius: 1em;
@@ -292,15 +292,15 @@ b {
 }
 .button:hover {
   background-color: #082F59;
-  color: white;
-}
-.button:active {
   color: #f5ce4a;
 }
 
 a {
   text-decoration: none;
-  color: #0E4258;
+  color: #047eb3;
+}
+a:hover {
+  color: #f5ce4a;
 }
 
 /* Special */

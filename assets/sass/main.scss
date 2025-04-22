@@ -5,7 +5,7 @@
 
 /* vars */
 $primary-color: #082F59;
-$secondary-color: #0E4258;
+$secondary-color: #047eb3;
 $accent-color: #f5ce4a;
 $on-primary-color: white;
 $on-secondary-color: white;
@@ -83,7 +83,7 @@ body {
     &__intro {
         grid-column: 2;
         grid-row: 1;
-        background: linear-gradient(lighten($secondary-color, 20%), $primary-color);
+        background: linear-gradient($secondary-color, $primary-color);
         padding: 2em;
         display: grid;
         grid-auto-flow: column;
@@ -224,7 +224,7 @@ body {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
-    background: linear-gradient(220deg, lighten($secondary-color, 20%), $primary-color);
+    background: linear-gradient(220deg, $secondary-color, $primary-color);
     color: $on-primary-color;
     padding: 3em;
     border-radius: 1em;
@@ -344,10 +344,6 @@ b {
 
     &:hover {
         background-color: $primary-color;
-        color: $on-primary-color;
-    }
-
-    &:active {
         color: $accent-color;
     }
 }
@@ -355,6 +351,10 @@ b {
 a {
     text-decoration: none;
     color: $secondary-color;
+
+    &:hover {
+        color: $accent-color;
+    }
 }
 
 /* Special */
