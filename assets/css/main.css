@@ -65,10 +65,10 @@ body {
   grid-column: 2;
   grid-row: 1;
   background: linear-gradient(#1c84b0, #082F59);
-  border-radius: 1em;
   padding: 2em;
   display: grid;
   grid-auto-flow: column;
+  border-radius: 1em;
 }
 .profile__body {
   grid-column: 2;
@@ -92,6 +92,24 @@ body {
   color: #f5ce4a;
   padding-top: 1em;
   font-weight: normal;
+}
+
+/* welcome */
+.welcome {
+  text-align: center;
+  margin-top: 5em;
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+}
+.welcome__title {
+  font-size: 4em;
+  margin-bottom: 1em;
+  color: #082F59;
+}
+.welcome__contact {
+  margin-top: 1em;
+  font-size: 1.5em;
 }
 
 /* panel */
@@ -168,7 +186,7 @@ body {
   background: linear-gradient(220deg, #1c84b0, #082F59);
   color: white;
   padding: 3em;
-  border-radius: 2em;
+  border-radius: 1em;
   height: fit-content;
 }
 .service__name {
@@ -255,6 +273,9 @@ body {
   display: grid;
   justify-content: center;
 }
+.cone img {
+  width: 6em;
+}
 
 b {
   font-weight: bold;
@@ -279,6 +300,7 @@ b {
 
 a {
   text-decoration: none;
+  color: #0E4258;
 }
 
 /* Special */

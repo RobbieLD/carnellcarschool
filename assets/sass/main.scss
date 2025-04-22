@@ -84,10 +84,10 @@ body {
         grid-column: 2;
         grid-row: 1;
         background: linear-gradient(lighten($secondary-color, 20%), $primary-color);
-        border-radius: 1em;
         padding: 2em;
         display: grid;
         grid-auto-flow: column;
+        border-radius: 1em;
     }
 
     &__body {
@@ -114,6 +114,30 @@ body {
         color: $accent-color;
         padding-top: 1em;
         font-weight: normal;
+    }
+}
+
+/* welcome */
+.welcome {
+    text-align: center;
+    margin-top: 5em;
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+
+    &__title {
+        font-size: 4em;
+        margin-bottom: 1em;
+        color: $primary-color;
+    }
+
+    &__body {
+
+    }
+
+    &__contact {
+        margin-top: 1em;
+        font-size: 1.5em;
     }
 }
 
@@ -203,7 +227,7 @@ body {
     background: linear-gradient(220deg, lighten($secondary-color, 20%), $primary-color);
     color: $on-primary-color;
     padding: 3em;
-    border-radius: 2em;
+    border-radius: 1em;
     height: fit-content;
 
     &__name {
@@ -299,6 +323,10 @@ body {
 .cone {
     display: grid;
     justify-content: center;
+    
+    img {
+        width: 6em;
+    }
 }
 
 b {
@@ -326,6 +354,7 @@ b {
 
 a {
     text-decoration: none;
+    color: $secondary-color;
 }
 
 /* Special */
