@@ -207,6 +207,41 @@ body {
     }
 }
 
+/* vehicle */
+.vehicle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    grid-template-rows: auto;
+
+    &__details {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    &__image {
+        grid-column: 2;
+        grid-row: 1;
+        justify-items: center;
+        border-radius: 1em;
+        background: linear-gradient(#047eb3, #082F59);
+        display: grid;
+        grid-auto-flow: row;
+
+        div {
+            font-size: 2.5em;
+            color: $accent-color;
+            font-family: "Caveat", cursive;
+        }
+
+        img {
+            max-width: 100%;
+            border-top-right-radius: 1em;
+            border-top-left-radius: 1em;
+        }
+    }
+}
+
 /* services */
 .services  {
     display: grid;
@@ -224,11 +259,18 @@ body {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
-    background: linear-gradient(220deg, $secondary-color, $primary-color);
+    // background: linear-gradient(220deg, $secondary-color, $primary-color);
     color: $on-primary-color;
     padding: 3em;
     border-radius: 1em;
     height: fit-content;
+
+    @for $i from 1 through 6 {
+        &--#{$i} {
+            // background: linear-gradient(darken($secondary-color, $i * 5), lighten($primary-color, $i * 5));
+            background-color: darken($secondary-color, $i * 5);
+        }
+      }
 
     &__name {
         grid-row: 1;
@@ -362,6 +404,7 @@ a {
     display: grid;
     grid-auto-flow: column;
     gap: 0.2em;
+    margin-left: 1em;
     font-size: 1.2em;
 
     i {

@@ -167,6 +167,37 @@ body {
   border-bottom: solid 1px #d5d5d5;
 }
 
+/* vehicle */
+.vehicle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  grid-template-rows: auto;
+}
+.vehicle__details {
+  grid-column: 1;
+  grid-row: 1;
+}
+.vehicle__image {
+  grid-column: 2;
+  grid-row: 1;
+  justify-items: center;
+  border-radius: 1em;
+  background: linear-gradient(#047eb3, #082F59);
+  display: grid;
+  grid-auto-flow: row;
+}
+.vehicle__image div {
+  font-size: 2.5em;
+  color: #f5ce4a;
+  font-family: "Caveat", cursive;
+}
+.vehicle__image img {
+  max-width: 100%;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+}
+
 /* services */
 .services {
   display: grid;
@@ -183,11 +214,28 @@ body {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto auto;
-  background: linear-gradient(220deg, #047eb3, #082F59);
   color: white;
   padding: 3em;
   border-radius: 1em;
   height: fit-content;
+}
+.service--1 {
+  background-color: rgb(3.4426229508, 108.4426229508, 154.0573770492);
+}
+.service--2 {
+  background-color: rgb(2.8852459016, 90.8852459016, 129.1147540984);
+}
+.service--3 {
+  background-color: rgb(2.3278688525, 73.3278688525, 104.1721311475);
+}
+.service--4 {
+  background-color: rgb(1.7704918033, 55.7704918033, 79.2295081967);
+}
+.service--5 {
+  background-color: rgb(1.2131147541, 38.2131147541, 54.2868852459);
+}
+.service--6 {
+  background-color: rgb(0.6557377049, 20.6557377049, 29.3442622951);
 }
 .service__name {
   grid-row: 1;
@@ -308,6 +356,7 @@ a:hover {
   display: grid;
   grid-auto-flow: column;
   gap: 0.2em;
+  margin-left: 1em;
   font-size: 1.2em;
 }
 .contact i {
