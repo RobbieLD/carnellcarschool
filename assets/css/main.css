@@ -22,25 +22,30 @@ body {
 .footer {
   grid-column: 1;
   grid-row: 4;
-  background-image: url(/images/footer_large.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  border-bottom-left-radius: 2em;
-  border-bottom-right-radius: 2em;
   background-position: bottom;
   display: grid;
   grid-auto-flow: row;
   align-content: end;
   justify-content: start;
-  color: #cecece;
+  color: #838383;
   font-size: 0.8em;
   padding: 2em;
-  gap: 0.5em;
+  row-gap: 2em;
 }
-.footer img {
-  padding-right: 0.3em;
+.footer__credits {
+  grid-row: 2;
+}
+.footer__credits img {
+  padding-right: 1em;
+  padding-left: 1em;
   width: 1em;
   vertical-align: middle;
+}
+.footer__image {
+  grid-row: 1;
+  width: 100%;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
 }
 
 .main {
@@ -349,7 +354,7 @@ body {
   color: #082F59;
 }
 .cone img {
-  width: 3em;
+  width: 6em;
 }
 
 b {
@@ -386,7 +391,7 @@ a:hover {
   margin-left: 1em;
   font-size: 1.2em;
 }
-.contact i {
+.contact a {
   padding-top: 0.3em;
   padding-bottom: 0.4em;
   padding-left: 1em;
@@ -394,14 +399,14 @@ a:hover {
   background-color: #082F59;
   color: white;
 }
-.contact i:hover {
+.contact a:hover {
   color: #f5ce4a;
 }
-.contact i:last-child {
+.contact a:last-child {
   border-top-right-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
 }
-.contact i:first-child {
+.contact a:first-child {
   border-top-left-radius: 0.3em;
   border-bottom-left-radius: 0.3em;
 }
