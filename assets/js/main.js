@@ -1,3 +1,16 @@
+/* This is the source of the events */
+/* Update this to add events */
+
+// const announcements = [
+//     {
+//         name: 'Track Day',
+//         date:  
+
+//     }
+// ]
+
+/* dont change anything down here */
+
 const setup = () => {
     setCopyrightYear();
 }
