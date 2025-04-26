@@ -121,9 +121,8 @@ body {
   display: grid;
   grid-column: 1;
   grid-row: 4;
-  row-gap: 1em;
-  margin-top: 5em;
-  margin-bottom: 5em;
+  margin-top: 2em;
+  margin-bottom: 10em;
 }
 .panel__content {
   grid-column: 1;
@@ -353,7 +352,7 @@ body {
   color: #082F59;
 }
 .cone img {
-  width: 6em;
+  width: 18em;
 }
 
 b {
