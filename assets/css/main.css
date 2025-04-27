@@ -116,6 +116,33 @@ body {
   font-size: 1.5em;
 }
 
+/* announcements */
+.announcements {
+  margin-top: 2em;
+  display: grid;
+  justify-items: center;
+  gap: 1em;
+}
+
+.announcement {
+  display: grid;
+  grid-auto-flow: column;
+  width: fit-content;
+  gap: 1em;
+  align-items: center;
+  padding-left: 1.5em;
+  background: #f5ce4a;
+  border-radius: 2em;
+  padding-right: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.announcement__icon {
+  font-size: 2em;
+}
+.announcement__title {
+  font-weight: bold;
+}
 /* panel */
 .panel {
   display: grid;
