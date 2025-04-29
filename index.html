@@ -13,12 +13,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-    <script src='assets/js/main.js' defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
 <body class="body">
     <nav class="nav">
         <img src="images/logo.png" class="logo">
-        <div class="menu">
+        <div class="menu menu__desktop">
             <a href="#instructor" class="button">Instructor</a>
             <a href="#vehicle" class="button">Vehicle</a>
             <a href="#services" class="button">Services</a>
@@ -31,9 +31,16 @@
                 </a>
             </div>
         </div>
+        <div class="menu menu__mobile">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="side-panel">
+
+        </div>
     </nav>
     <div class="hero">
-        <img src="images/banner_large.png" class="banner banner--hero">
+        <img src="images/banner_large.png" class="banner banner--hero banner--large">
+        <img src="images/banner_small.png" class="banner banner--hero banner--small">
     </div>
     <main class="main">
         <div class="panel">
@@ -227,11 +234,16 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <img src="images/footer_large.png" class="footer__image">
-        <div class="footer__credits">
+    <footer class="footer" x-data="{ year: new Date().getFullYear() }">
+        <img src="images/footer_large.png" class="footer__image footer__image--large">
+        <img src="images/footer_small.png" class="footer__image footer__image--small">
+        <div class="footer__credits footer__credits--large">
             Designed by <a href="https://robdavis.dev" target="_blank">Rob Davis</a> and <a href="https://mojitotomato.work/work" target="_blank">Monica Warren</a>
-            <img src="images/cone_bw.png"> Copyright © <span id="copyright">{{year}}</span> Carnell Car School</div>
+            <img src="images/cone_bw.png"> Copyright © <span x-text="year"></span> Carnell Car School</div>
+        </div>
+        <div class="footer__credits footer__credits--small">
+            <img src="images/cone_bw.png"> <span>Designed by <a href="https://robdavis.dev" target="_blank">Rob Davis</a> and <a href="https://mojitotomato.work/work" target="_blank">Monica Warren</a></span>
+            <img src="images/cone_bw.png"><span>Copyright © <span x-text="year"></span> Carnell Car School</div></span>
         </div>
     </footer>
 </body>

@@ -34,6 +34,29 @@ body {
 .footer__credits {
   grid-row: 2;
 }
+@media screen and (max-width: 900px) {
+  .footer__credits--large {
+    display: none;
+  }
+}
+.footer__credits--small {
+  display: none;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  width: fit-content;
+  align-items: center;
+}
+.footer__credits--small span {
+  grid-column: 2;
+}
+.footer__credits--small img {
+  grid-column: 1;
+}
+@media screen and (max-width: 900px) {
+  .footer__credits--small {
+    display: grid;
+  }
+}
 .footer__credits img {
   padding-right: 1em;
   padding-left: 1em;
@@ -45,6 +68,19 @@ body {
   width: 100%;
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
+}
+@media screen and (max-width: 900px) {
+  .footer__image--large {
+    display: none;
+  }
+}
+.footer__image--small {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .footer__image--small {
+    display: initial;
+  }
 }
 
 .main {
@@ -74,6 +110,12 @@ body {
   grid-auto-flow: column;
   border-radius: 1em;
 }
+@media screen and (max-width: 900px) {
+  .profile__intro {
+    grid-auto-flow: row;
+    gap: 2em;
+  }
+}
 .profile__body {
   grid-column: 2;
   grid-row: 2;
@@ -89,6 +131,8 @@ body {
   justify-self: center;
   align-self: center;
   color: white;
+  line-height: 1.1;
+  text-align: center;
 }
 .intro__tag {
   font-family: "Caveat", cursive;
@@ -110,6 +154,7 @@ body {
   font-size: 4em;
   margin-bottom: 1em;
   color: #082F59;
+  line-height: 1.1em;
 }
 .welcome__contact {
   margin-top: 1em;
@@ -204,9 +249,20 @@ body {
   gap: 2em;
   grid-template-rows: auto;
 }
+@media screen and (max-width: 900px) {
+  .vehicle {
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+  }
+}
 .vehicle__details {
   grid-column: 1;
   grid-row: 1;
+}
+@media screen and (max-width: 900px) {
+  .vehicle__details {
+    grid-row: 2;
+  }
 }
 .vehicle__image {
   grid-column: 2;
@@ -216,11 +272,19 @@ body {
   background: linear-gradient(#047eb3, #082F59);
   display: grid;
   grid-auto-flow: row;
+  height: fit-content;
+}
+@media screen and (max-width: 900px) {
+  .vehicle__image {
+    grid-column: 1;
+  }
 }
 .vehicle__image div {
   font-size: 2.5em;
   color: #f5ce4a;
   font-family: "Caveat", cursive;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 .vehicle__image img {
   max-width: 100%;
@@ -231,7 +295,7 @@ body {
 /* services */
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
   column-gap: 2em;
   row-gap: 6em;
 }
@@ -342,6 +406,19 @@ body {
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
 }
+@media screen and (max-width: 900px) {
+  .banner--large {
+    display: none;
+  }
+}
+.banner--small {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .banner--small {
+    display: initial;
+  }
+}
 
 /* Nav */
 .nav {
@@ -353,6 +430,11 @@ body {
   align-items: center;
   margin-bottom: 1em;
 }
+@media screen and (max-width: 900px) {
+  .nav {
+    grid-template-columns: auto 1fr;
+  }
+}
 
 .logo {
   width: 6em;
@@ -362,6 +444,8 @@ body {
 
 .menu {
   display: grid;
+}
+.menu__desktop {
   grid-auto-flow: column;
   align-items: center;
   font-size: 1.2em;
@@ -369,6 +453,33 @@ body {
   grid-column: 3;
   grid-row: 1;
   justify-items: end;
+}
+@media screen and (max-width: 900px) {
+  .menu__desktop {
+    display: none;
+  }
+}
+.menu__mobile {
+  display: none;
+  justify-self: end;
+  font-size: 3em;
+  color: #082F59;
+  cursor: pointer;
+}
+.menu__mobile:hover {
+  color: #047eb3;
+}
+@media screen and (max-width: 900px) {
+  .menu__mobile {
+    display: initial;
+  }
+}
+
+.side-panel {
+  display: none;
+}
+.side-panel--open {
+  display: initial;
 }
 
 /* Common */
@@ -379,7 +490,8 @@ body {
   color: #082F59;
 }
 .cone img {
-  width: 18em;
+  max-width: 18em;
+  width: 100%;
 }
 
 b {

@@ -15,6 +15,7 @@ $text-color: #353535;
 
 $site-width: 1200px;
 
+$mobile-break: 900px;
 
 html,
 body {
@@ -40,6 +41,32 @@ body {
 
     &__credits {
         grid-row: 2;
+
+        &--large {
+            @media screen and (max-width: $mobile-break) {
+                display: none;
+            }
+        }
+
+        &--small {
+            display: none;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+            width: fit-content;
+            align-items: center;
+
+            span {
+                grid-column: 2;
+            }
+
+            img {
+                grid-column: 1;
+            }
+
+            @media screen and (max-width: $mobile-break) {
+                display: grid;
+            }
+        }
         
         img {
             padding-right: 1em;
@@ -55,6 +82,21 @@ body {
         width: 100%;
         border-bottom-left-radius: 2em;
         border-bottom-right-radius: 2em;
+
+        &--large {
+
+            @media screen and (max-width: $mobile-break) {
+                display: none;
+            }
+        }
+
+        &--small {
+            display: none;
+
+            @media screen and (max-width: $mobile-break) {
+                display: initial;
+            }
+        }
     }
 
 
@@ -98,6 +140,11 @@ body {
         display: grid;
         grid-auto-flow: column;
         border-radius: 1em;
+
+        @media screen and (max-width: $mobile-break) {
+            grid-auto-flow: row;
+            gap: 2em;
+        }
     }
 
     &__body {
@@ -116,6 +163,8 @@ body {
         justify-self: center;
         align-self: center;
         color: $on-primary-color;
+        line-height: 1.1;
+        text-align: center;
     }
 
     &__tag {
@@ -139,10 +188,7 @@ body {
         font-size: 4em;
         margin-bottom: 1em;
         color: $primary-color;
-    }
-
-    &__body {
-
+        line-height: 1.1em;
     }
 
     &__contact {
@@ -259,9 +305,18 @@ body {
     gap: 2em;
     grid-template-rows: auto;
 
+    @media screen and (max-width: $mobile-break) {
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+    }
+
     &__details {
         grid-column: 1;
         grid-row: 1;
+
+        @media screen and (max-width: $mobile-break) {
+            grid-row: 2;
+        }
     }
 
     &__image {
@@ -272,11 +327,18 @@ body {
         background: linear-gradient(#047eb3, #082F59);
         display: grid;
         grid-auto-flow: row;
+        height: fit-content;
+
+        @media screen and (max-width: $mobile-break) {
+            grid-column: 1;
+        }
 
         div {
             font-size: 2.5em;
             color: $accent-color;
             font-family: "Caveat", cursive;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
         }
 
         img {
@@ -290,7 +352,7 @@ body {
 /* services */
 .services  {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
     column-gap: 2em;
     row-gap: 6em;
 
@@ -401,6 +463,20 @@ body {
         border-bottom-left-radius: 2em;
         border-bottom-right-radius: 2em;
     }
+
+    &--large {
+        @media screen and (max-width: $mobile-break) {
+            display: none;
+        }
+    }
+
+    &--small {
+        display: none;
+
+        @media screen and (max-width: $mobile-break) {
+            display: initial;
+        }
+    }
 }
 
 
@@ -414,6 +490,10 @@ body {
     grid-template-rows: auto;
     align-items: center;
     margin-bottom: 1em;
+
+    @media screen and (max-width: $mobile-break) {
+        grid-template-columns: auto 1fr;
+    }
 }
 
 .logo {
@@ -423,14 +503,46 @@ body {
 }
 
 .menu {
+
     display: grid;
-    grid-auto-flow: column;
-    align-items: center;
-    font-size: 1.2em;
-    justify-self: end;
-    grid-column: 3;
-    grid-row: 1;
-    justify-items: end;
+
+    &__desktop {
+        grid-auto-flow: column;
+        align-items: center;
+        font-size: 1.2em;
+        justify-self: end;
+        grid-column: 3;
+        grid-row: 1;
+        justify-items: end;
+
+        @media screen and (max-width: $mobile-break) {
+            display: none;
+        }
+    }
+
+    &__mobile {
+        display: none;
+        justify-self: end;
+        font-size: 3em;
+        color: $primary-color;
+        cursor: pointer;
+        
+        &:hover {
+            color: $secondary-color;
+        }
+
+        @media screen and (max-width: $mobile-break) {
+            display: initial;
+        }
+    }
+}
+
+.side-panel {
+    display: none;
+
+    &--open {
+        display: initial;
+    }
 }
 
 /* Common */
@@ -443,7 +555,8 @@ body {
     color: $primary-color;
     
     img {
-        width: 18em;
+        max-width: 18em;
+        width: 100%;
     }
 }
 
