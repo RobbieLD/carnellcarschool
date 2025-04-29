@@ -260,10 +260,6 @@ body {
     &__title {
         font-weight: bold;
     }
-
-    &__body {
-
-    }
 }
 
 /* panel */
@@ -281,57 +277,6 @@ body {
     &__content {
         grid-column: 1;
         grid-row: 3;
-    }
-
-    &__title {
-        font-size: 2em;
-        grid-row: 1;
-        grid-column: 1/3;
-
-        &--green {
-            border-color: #007216;
-    
-            div {
-                background: #007216;
-            }
-        }
-    
-        &--blue {
-            border-color: #0052bd;
-    
-            div {
-                background: #0052bd;
-            }
-        }
-    
-        &--left {
-            justify-self: left;
-        }
-    
-        &--right {
-            justify-self: right;
-        }
-
-        div {
-            border-radius: 0.3em;
-            border: solid 3px #f7ffff;
-            padding: 0.5em;
-            width: fit-content;
-            font-weight: 500;
-            color: #f7ffff;
-        }
-    
-        width: fit-content;
-        font-size: 2em;
-        border-radius: 0.3em;
-        border-style: solid;
-        border-width: 4px;
-    }
-
-    &__divider {
-        grid-row: 2;
-        grid-column: 1/3;
-        border-bottom: solid 1px #d5d5d5;
     }
 }
 
@@ -569,6 +514,66 @@ body {
     }
 }
 
+.mobile-menu {
+    display: grid;
+    z-index: 9;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    grid-auto-flow: row;
+
+    &__header {
+        display: grid;
+        padding-top: 3em;
+        padding: 1em;
+        grid-auto-rows: min-content;
+
+        &--close {
+            font-size: 4em;
+            justify-self: end;
+            color: $primary-color;
+            grid-row: 1;
+
+            &:hover {
+                color: $accent-color;
+            }
+        }
+
+        &--contacts {
+            grid-row: 2;
+            width: 100%;
+            display: grid;
+            grid-auto-flow: column;
+            justify-items: center;
+            font-size: 2em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            border-top: solid 1px rgb(235, 235, 235);
+            border-bottom: solid 1px rgb(235, 235, 235);
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            color: $primary-color;
+
+            :hover {
+                color: $accent-color;
+                cursor: pointer;
+            }
+        }
+
+        &--panels {
+            grid-row: 3;
+            display: grid;
+            font-size: 2em;
+            row-gap: 1em;
+            margin-top: 1em;
+            justify-items: center;
+        }
+    }
+}
+
 .logo {
     width: 6em;
     grid-column: 1;
@@ -615,14 +620,6 @@ body {
         @media screen and (max-width: $tablet-break) {
             display: initial;
         }
-    }
-}
-
-.side-panel {
-    display: none;
-
-    &--open {
-        display: initial;
     }
 }
 
