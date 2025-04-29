@@ -125,6 +125,7 @@ body {
 
     &__image {
         max-width: 20em;
+        width: 100%;
         border-radius: 50%;
         grid-row: 1;
         grid-column: 1;
@@ -194,6 +195,13 @@ body {
     &__contact {
         margin-top: 1em;
         font-size: 1.5em;
+
+        @media screen and (max-width: $mobile-break) {
+            display: grid;
+            justify-items: start;
+            justify-self: center;
+            gap: 1em;
+        }
     }
 }
 
@@ -334,7 +342,7 @@ body {
         }
 
         div {
-            font-size: 2.5em;
+            font-size: 1.5em;
             color: $accent-color;
             font-family: "Caveat", cursive;
             padding-top: 0.5em;
@@ -353,6 +361,11 @@ body {
 .services  {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
+
+    @media screen and (max-width: $mobile-break) {
+        grid-template-columns: auto;
+    }
+
     column-gap: 2em;
     row-gap: 6em;
 
@@ -392,6 +405,8 @@ body {
         margin-top: 1em;
         gap: 1em;
         align-content: center;
+        justify-content: start;
+        align-items: center;
         background: $on-secondary-color;
         color: $secondary-color;
         border-radius: 1em;
