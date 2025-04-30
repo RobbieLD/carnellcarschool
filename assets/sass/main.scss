@@ -40,6 +40,7 @@ body {
 
     @media screen and (max-width: $tablet-break) {
         padding: 0em;
+        grid-template-rows: auto auto auto 20em;
     }
 }
 
@@ -456,10 +457,6 @@ body {
     grid-column: 1;
     grid-row: 2;
     display: grid;
-
-    @media screen and (max-width: $tablet-break) {
-        grid-row: 1 / 3;
-    }
 }
 
 .banner {
@@ -505,12 +502,15 @@ body {
     grid-template-columns: auto auto 1fr;
     grid-template-rows: auto;
     align-items: center;
-    margin-bottom: 1em;
 
     @media screen and (max-width: $tablet-break) {
         grid-template-columns: auto 1fr;
         z-index: 1;
         padding: 1em;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color: white;
     }
 }
 
@@ -578,6 +578,10 @@ body {
     width: 6em;
     grid-column: 1;
     grid-row: 1;
+
+    @media screen and (max-width: $tablet-break) {
+        width: 4em;
+    }
 }
 
 .menu {
@@ -635,6 +639,10 @@ body {
     img {
         max-width: 18em;
         width: 100%;
+    }
+
+    @media screen and (max-width: $tablet-break) {
+        scroll-margin-top: 5em;
     }
 }
 
