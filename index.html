@@ -13,39 +13,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <script defer src="assets/js/data.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
-<body class="body" id="top">
-    <nav class="nav"  x-data="{ open: false }">
-        <a href="#top">
-            <img src="images/logo.png" class="logo">
-        </a>
-        <div class="menu menu__desktop">
-            <a href="#instructor" class="button">Instructor</a>
-            <a href="#vehicle" class="button">Vehicle</a>
-            <a href="#services" class="button">Services</a>
-            <div class="contact">
-                <a href="https://www.facebook.com/carnellcarschool/" target="_blank">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://instagram.com/carnellcarschool?utm_source=ig_profile_share&igshid=pnjqju5vex6b" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-        <div class="menu menu__mobile" x-on:click="open = true">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="mobile-menu" x-show="open">
-            <div class="mobile-menu__header">
-                <i class="fa-solid fa-xmark mobile-menu__header--close" x-on:click="open = false"></i>
-                <div class="mobile-menu__header--contacts">
-                    <a href="tel:0434 190 922">
-                        <i class="fa-solid fa-phone"></i>
-                    </a>
-                    <a href="mailto:carnellcarschool@gmail.com">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
+<body id="top" x-data="{ top: true }" @scroll.window="top = window.scrollY < 10">
+    <div class="header" :class="top ? '' : 'header--shadow'">
+        <nav class="nav" x-data="{ open: false }">
+            <a href="#top">
+                <img src="images/logo.png" class="logo">
+            </a>
+            <div class="menu menu__desktop">
+                <a href="#instructor" class="button">Instructor</a>
+                <a href="#vehicle" class="button">Vehicle</a>
+                <a href="#services" class="button">Services</a>
+                <div class="contact">
                     <a href="https://www.facebook.com/carnellcarschool/" target="_blank">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
@@ -53,221 +34,244 @@
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                 </div>
-                <div class="mobile-menu__header--panels">
-                    <a href="#instructor" class="button" x-on:click="open = false">Instructor</a>
-                    <a href="#vehicle" class="button" x-on:click="open = false">Vehicle</a>
-                    <a href="#services" class="button" x-on:click="open = false">Services</a>
-                </div>
             </div>
-        </div>
-    </nav>
-    <div class="hero">
-        <img src="images/banner_large.png" class="banner banner--hero banner--large">
-        <img src="images/banner_small.png" class="banner banner--hero banner--small">
-    </div>
-    <main class="main">
-        <div class="panel">
-            <div class="welcome">
-                <div class="welcome__title">
-                    Welcome to Carnell Car School
-                </div>
-                <div class="welcome__body mobile-padding">
-                    Carnell Car School is the friendly, affordable and professional driver education company in the Brisbane area.
-                    Learning to drive can be stressful and intimidating but with his years of experience and expertise Dave will have you feeling at home behind the wheel in no time. 
-                    Our ever increasing array of services don't just cater to new drivers. 
-                    Whether you're looking to improve your skills on a skid pan or learn how to tackle the rough terrain of the Queensland bush Carnell Car School has you covered.
-                    <div class="welcome__contact">
-                  
+            <div class="menu menu__mobile" x-on:click="open = true">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="mobile-menu" x-show="open">
+                <div class="mobile-menu__header">
+                    <i class="fa-solid fa-xmark mobile-menu__header--close" x-on:click="open = false"></i>
+                    <div class="mobile-menu__header--contacts">
                         <a href="tel:0434 190 922">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <span>0434 190 922</span>
+                            <i class="fa-solid fa-phone"></i>
                         </a>
-
                         <a href="mailto:carnellcarschool@gmail.com">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                            <span>carnellcarschool@gmail.com</span>
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.facebook.com/carnellcarschool/" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://instagram.com/carnellcarschool?utm_source=ig_profile_share&igshid=pnjqju5vex6b" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
+                    <div class="mobile-menu__header--panels">
+                        <a href="#instructor" class="button" x-on:click="open = false">Instructor</a>
+                        <a href="#vehicle" class="button" x-on:click="open = false">Vehicle</a>
+                        <a href="#services" class="button" x-on:click="open = false">Services</a>
+                    </div>
                 </div>
-                <div class="announcements">
-                    <div class="announcement">
-                        <div class="announcement__icon">
-                            <i class="fa-solid fa-bullhorn"></i>
+            </div>
+        </nav>
+    </div>
+    <div class="body">
+        <div class="hero">
+            <img src="images/banner_large.png" class="banner banner--hero banner--large">
+            <img src="images/banner_small.png" class="banner banner--hero banner--small">
+        </div>
+        <main class="main">
+            <div class="panel">
+                <div class="welcome">
+                    <div class="welcome__title">
+                        Welcome to Carnell Car School
+                    </div>
+                    <div class="welcome__body mobile-padding">
+                        Carnell Car School is the friendly, affordable and professional driver education company in the Brisbane area.
+                        Learning to drive can be stressful and intimidating but with his years of experience and expertise Dave will have you feeling at home behind the wheel in no time. 
+                        Our ever increasing array of services don't just cater to new drivers. 
+                        Whether you're looking to improve your skills on a skid pan or learn how to tackle the rough terrain of the Queensland bush Carnell Car School has you covered.
+                        <div class="welcome__contact">
+                      
+                            <a href="tel:0434 190 922">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <span>0434 190 922</span>
+                            </a>
+    
+                            <a href="mailto:carnellcarschool@gmail.com">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <span>carnellcarschool@gmail.com</span>
+                            </a>
                         </div>
-                        <div class="announcement__body">
-                            <span class="announcement__title">
-                                July Madness
-                            </span>:
-                            For the month of July all lessons are 10% off!
+                    </div>
+                    <div class="announcements">
+                        <template x-for="(value, index) in window.announcements()" :key="index">
+                            <div class="announcement">
+                                <div class="announcement__icon">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </div>
+                                <div class="announcement__body">
+                                    <span class="announcement__title" x-text="value.title"></span>: <span x-text="value.body"></span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="cone" id="instructor">
+                <img src="images/divider_instructor.png">
+            </div>
+            <div class="panel">
+                <div class="profile">
+                    <div class="profile__intro">
+                        <div class="intro__title">
+                            <div>Hi, I'm David Carnell</div>
+                            <div class="intro__tag">"A highschool teacher with a passion for driving"</div>
+                        </div>
+                        <img src="images/david.jpg" class="profile__image">
+                    </div>
+                    <div class="profile__body mobile-padding">
+                        <p>
+                            I first started driving in around 1996 on my parents 'farm' long before I was old enough to drive on the road. When I was old enough though, I successfully passed my manual driving test in 2003 with the assistance of a good driving instructor. Then in 2007 I had the opportunity to start driving heavy vehicles professionally in a part-time capacity, so with the help of another good driving instructor I passed my HR Truck driving test and continued driving part-time even after I started teaching in 2009. Since then, I have had the opportunity to drive a large variety of vehicles both professionally and privately in many off-road and on-road situations, whilst also teaching a many different subjects, across all year levels, and in a variety of locations. 
+                        </p>
+                        <p>
+                            I enjoy driving and I enjoy teaching and in early 2018, I had a light-bulb moment, and after consultation with my wife, decided to combine the two and start Carnell Car School. It began with just driving lessons, and in a partnership with parents and other supervisors, over the years I have guided countless students to the joy and independence of being driver's licence holders. However, not long into my driving instructor career, it became apparent that there was a lot more knowledge and there were a lot more skills surrounding driving that learners and the general public could gain that would make them safer vehicle operators. With that revelation, a plan was put in place to offer Offroad Driver Training, Skid Pan Experiences and Basic Maintenance Courses, at a reasonable price, under the Carnell Car School umbrella.
+                        </p>
+                        <p>
+                            It took some time, and some false starts, but I am proud to say that Carnell Car School now offers all of the above courses, in addition to the very successful, individually-focused, manual driving lessons that have been the back-bone of the Carnell Car School business for many years.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="cone" id="vehicle">
+                <img src="images/divider_vehicle.png">
+            </div>
+            <div class="panel">
+                <div class="vehicle">
+                    <div class="vehicle__details mobile-padding">
+                        <div>
+                            This compact SUV is the perfect car in which to learn to drive. With a high driving position and great visibility you will find it easy to see potential hazards on the roads. The short wheel-base and small turning circle make all those technical maneuvers a breeze to learn and easy to repeat time and time again. 
+                        </div>
+                        <p>
+                            With a slightly lower-than-standard gear ratio and an engine designed to produce lots of torque low in the rev-range, the Jimny is less likely to stall than most other small vehicles on the roads today. This all contributes to a simpler, easier and more straight-forward driving experience with Carnell Car School. 
+                        </p>
+                        <p>
+                            This late model Jimny has a manual gearbox, fitted with bar-type instructor pedals (Dual Controls Queensland) and a full set of instructor mirrors.
+                        </p>
+                        <p>
+                            Automatic or Manual lessons in your own car are by negotiation. Please contact David to talk through the requirements if you wish to take lessons in your own vehicle.
+                        </p>
+                    </div>
+                    <div class="vehicle__image">
+                        <img src="images/jimmy.jpg">
+                        <div>"The Mighty Jimny"</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cone" id="services">
+                <img src="images/divider_services.png">
+            </div>
+            <div class="panel">
+                <div class="panel__content">
+                    <div class="services__description mobile-padding">
+                        <p>Carnell Car School offers a wide array of driver education and instructional services. Please note all courses and lessons to be paid for by Cash or Bank Transfer.
+                    </div>
+                    <div class="services">
+                        <div class="service service--1">
+                            <div class="service__name">Manual Driving Lessons</div>
+                            <div class="service__price">$80 <div>per hour</div></div>
+                            <div class="service__description">Individual Manual Driving Lessons are undertaken in the Suzuki Jimny and are usually 1 hour long, but longer lessons are possible upon request. Beginning and ending driving lessons at different locations is possible, but please discuss this with David prior to the commencement of the lesson if you would like to make use of this option.</div>
+                            <div class="service__location">
+                                <a target="_blank" href="https://www.google.com/maps/place/MacKenzie+QLD,+Australia/@-27.5418835,153.1188822,16z/data=!3m1!4b1!4m6!3m5!1s0x6b915c924f31e6d3:0x502a35af3de8f90!8m2!3d-27.5416334!4d153.1217063!16zL20vMDlqcHB4?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                                <span>Start and finish wherever it is convenient for the learner, often from a home, school or work address within 20 minutes drive of Mackenzie, Qld.</span>
+                            </div>
+                        </div>
+                        <div class="service service--2">
+                            <div class="service__name">Basic Maintenance Course</div>
+                            <div class="service__price">$150 <div>per person</div></div>
+                            <div class="service__description">The Basic Maintenance Course is a 3 hour practical course that is presented to small groups. This course will help you take care of your vehicle more comprehensively and will include the following: a brief overview of vehicle parts and function, a brief overview of some things to look for when purchasing used cars, refueling a vehicle, checking tread levels on tyre, changing a tyre, checking and adjusting tyre pressures, checking and topping up fluid levels, checking and changing fuses, checking and change light bulbs, changing a battery. There will be a Carnell Car School vehicle onsite as an example or if participant doesn't have access to their own vehicle, but it is recommended that participants bring and learn on their own vehicle as every vehicle is unique.</div>
+                            <div class="service__location">
+                                <a target="_blank" href="#https://www.google.com/maps/place/RACQ+Mobility+Centre/@-27.6501343,153.230288,17z/data=!3m1!4b1!4m6!3m5!1s0x6b9169ba2dce28f9:0x76cee450ff85bbc0!8m2!3d-27.6501391!4d153.2328629!16s%2Fg%2F1tj91qn7?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                                <span class="service__location--address">RACQ Mobility Centre, 1753-1799 Mount Cotton Rd, Cornubia QLD 4130</span>
+                            </div>
+                        </div>
+                        <div class="service service--3">
+                            <div class="service__name">Offroad Driving Course</div>
+                            <div class="service__price">$120 <div>per vehicle</div></div>
+                            <div class="service__description">The Offroad Driving Course is 3 hour course undertaken in a small group setting at the RACQ Mobility Centre at Mt Cotton/Cornubia using their purpose-built 4WD training facility. Find out what you and your vehicle are capable of, with water crossings; articulation tests; steep inclines and declines; ramp over, approach and departure angle testing; tight, windy, low-traction trails; and much more. Starting out with a walk-through, talk-through of basic trails and finishing off with a self-directed exploration of any and all available obstacle and/or trail within the 4WD facility, there is something for everyone in this course.</div>
+                            <div class="service__location">
+                                <a target="_blank" href="https://www.google.com/maps/place/RACQ+Mobility+Centre/@-27.6501343,153.230288,17z/data=!3m1!4b1!4m6!3m5!1s0x6b9169ba2dce28f9:0x76cee450ff85bbc0!8m2!3d-27.6501391!4d153.2328629!16s%2Fg%2F1tj91qn7?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                                <span class="service__location--address">RACQ Mobility Centre, 1753-1799 Mount Cotton Rd, Cornubia QLD 4130</span>
+                            </div>
+                        </div>
+                        <div class="service service--4">
+                            <div class="service__name">Driving Test Package</div>
+                            <div class="service__price">$200 <div>in total</div></div>
+                            <div class="service__description">The Driving Test Package includes a 1 hour pre-test drive and briefing, use of the Carnell Car School vehicle to complete the practical driving test with the TMR assessor, and a post-test drive to student's preferred location (home, school, work etc.) within a 10km radius of the test centre.</div>
+                            <div class="service__location">
+                                <span class="service__location--address">Available at the following TMR Locations</span>
+                                
+                                <a target="_blank" href="https://www.google.com/maps/place/Department+of+Transport+and+Main+Roads+Customer+Service+Centre+Greenslopes/@-27.5125576,153.048852,17z/data=!3m2!4b1!5s0x6b915a5713a36899:0xcc14fd7b40fd23fa!4m6!3m5!1s0x6b915a563b2a512f:0x474defb23b245a39!8m2!3d-27.5125624!4d153.0537229!16s%2Fg%2F1hdzk__1y?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                                <span class="service__location--address">Greenslopes Shopping Mall 700 Logan Road Corner, Plimsoll St, Greenslopes QLD 4120</span>
+    
+                                <a target="_blank" href="https://www.google.com/maps/place/Department+of+Transport+and+Main+Roads+Customer+Service+Centre+Wynnum/@-27.4449332,153.1684961,17z/data=!3m1!4b1!4m6!3m5!1s0x6b915fb17ec3ffff:0xecdc73172811de39!8m2!3d-27.444938!4d153.171071!16s%2Fg%2F1hd_h4953?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                                <span class="service__location--address">139 Tingal Rd, Wynnum QLD 4178</span>
+    
+                                <a target="_blank" href="https://www.google.com/maps/place/Department+of+Transport+and+Main+Roads+Customer+Service+Centre+Cleveland/@-27.531139,153.26384,17z/data=!4m10!1m2!2m1!1stmr+Ross+Court+Centre,+197%2F207+Bloomfield+St,+Cleveland+QLD+4163!3m6!1s0x6b9166c3b76fc699:0x69811a80291c7019!8m2!3d-27.5312126!4d153.2662522!15sCkB0bXIgUm9zcyBDb3VydCBDZW50cmUsIDE5Ny8yMDcgQmxvb21maWVsZCBTdCwgQ2xldmVsYW5kIFFMRCA0MTYzIgOIAQGSARdzdGF0ZV9nb3Zlcm5tZW50X29mZmljZaoBggEQASoZIhV0bXIgcm9zcyBjb3VydCBjZW50cmUoADIfEAEiGzfXboaSCAyuxkZ_45PIPGJKQyEanUA7UxIFyjJCEAIiPnRtciByb3NzIGNvdXJ0IGNlbnRyZSAxOTcgMjA3IGJsb29tZmllbGQgc3QgY2xldmVsYW5kIHFsZCA0MTYz4AEA!16s%2Fg%2F1hm2lkpgt?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                                <span class="service__location--address">Ross Court Centre, 197/207 Bloomfield St, Cleveland QLD 4163</span>
+    
+                                <a target="_blank" href="https://www.google.com/maps/place/Department+of+Transport+and+Main+Roads+Customer+Service+Centre+Sherwood/@-27.5325898,152.9792822,17z/data=!3m1!4b1!4m6!3m5!1s0x6b915025043b52bd:0x7849520c32e6d3ab!8m2!3d-27.5325946!4d152.9818571!16s%2Fg%2F1ptz9f88f?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                                <span class="service__location--address">14 Primrose St, Sherwood QLD 4075</span>
+    
+                                <a target="_blank" href="https://www.google.com/maps/place/Department+of+Transport+and+Main+Roads+Customer+Service+Centre+Logan+Central/@-27.6456092,153.1032001,17z/data=!3m1!4b1!4m6!3m5!1s0x6b914406568909d5:0x1f97b68a4afeaaf5!8m2!3d-27.645614!4d153.105775!16s%2Fg%2F1pv0fs4tm?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                                <span class="service__location--address">Jacaranda Ave, Logan Central QLD 4114</span>
+                            </div>
+                        </div>
+                        <div class="service service--5">
+                            <div class="service__name">Skid Pan Experience</div>
+                            <div class="service__price">$200 <div>per person</div></div>
+                            <div class="service__description">The Skid Pan Experience is a 3 hour window of opportunity to put your vehicle through it's paces in a controlled, low-grip environment, without the danger of other road users. Learn how it feels to lose control of your vehicle due to lack of grip. Learn how to recognise and control a slide and how to avoid losing control in wet and slippery conditions. Discuss your new-found knowledge and skills with other course participants while you wait for your next turn on the slippery stuff. At the end of the course take those skills with you and apply them in the real world to help keep yourself and other road-users safer when road conditions are less than ideal. Please note, that there is a wash-down facility on-site to ensure that the slipping and sliding doesn't unexpectedly follow you onto the public road at the end of the event. </div>
+                            <div class="service__location">
+                                <a target="_blank" href="https://www.google.com/maps/place/RACQ+Mobility+Centre/@-27.6501343,153.230288,17z/data=!3m1!4b1!4m6!3m5!1s0x6b9169ba2dce28f9:0x76cee450ff85bbc0!8m2!3d-27.6501391!4d153.2328629!16s%2Fg%2F1tj91qn7?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D" class="service__location--marker"><i class="fa-solid fa-location-dot"></i></a>
+                                <span class="service__location--address">RACQ Mobility Centre, 1753-1799 Mount Cotton Rd, Cornubia QLD 4130</span>
+                            </div>
+                        </div>
+                        <div class="service service--6">
+                            <div class="service__name">Learner Driver Works Package</div>
+                            <div class="service__price">$6000 <div>in total</div></div>
+                            <div class="service__description">The Learner Driver Works Package includes advice and practice for the PrepL Online Learning course, 100 log-book hours of driving lessons (including at least 10 night hours), a small group basic maintenance course, booking and payment for a practical driving test, test package, a 5 year licence (upon passing the practical driving test).</div>
+                            <div class="service__location">
+                                <a href="#nogo" class="service__location--marker"><i class="fa-solid fa-location-dot"></i></a>
+                                <span class="service__location--address">Localtion to be arranged during booking</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="cone" id="instructor">
-            <img src="images/divider_instructor.png">
-        </div>
-        <div class="panel">
-            <div class="profile">
-                <div class="profile__intro">
-                    <div class="intro__title">
-                        <div>Hi, I'm David Carnell</div>
-                        <div class="intro__tag">"A highschool teacher with a passion for driving"</div>
-                    </div>
-                    <img src="images/david.jpg" class="profile__image">
-                </div>
-                <div class="profile__body mobile-padding">
-                    <p>
-                        I first started driving in around 1996 on my parents 'farm' long before I was old enough to drive on the road. When I was old enough though, I successfully passed my manual driving test in 2003 with the assistance of a good driving instructor. Then in 2007 I had the opportunity to start driving heavy vehicles professionally in a part-time capacity, so with the help of another good driving instructor I passed my HR Truck driving test and continued driving part-time even after I started teaching in 2009. Since then, I have had the opportunity to drive a large variety of vehicles both professionally and privately in many off-road and on-road situations, whilst also teaching a many different subjects, across all year levels, and in a variety of locations. 
-                    </p>
-                    <p>
-                        I enjoy driving and I enjoy teaching and in early 2018, I had a light-bulb moment, and after consultation with my wife, decided to combine the two and start Carnell Car School. It began with just driving lessons, and in a partnership with parents and other supervisors, over the years I have guided countless students to the joy and independence of being driver's licence holders. However, not long into my driving instructor career, it became apparent that there was a lot more knowledge and there were a lot more skills surrounding driving that learners and the general public could gain that would make them safer vehicle operators. With that revelation, a plan was put in place to offer Offroad Driver Training, Skid Pan Experiences and Basic Maintenance Courses, at a reasonable price, under the Carnell Car School umbrella.
-                    </p>
-                    <p>
-                        It took some time, and some false starts, but I am proud to say that Carnell Car School now offers all of the above courses, in addition to the very successful, individually-focused, manual driving lessons that have been the back-bone of the Carnell Car School business for many years.
-                    </p>
-                </div>
+        </main>
+        <footer class="footer" x-data="{ year: new Date().getFullYear() }">
+            <img src="images/footer_large.png" class="footer__image footer__image--large">
+            <img src="images/footer_small.png" class="footer__image footer__image--small">
+            <div class="footer__credits footer__credits--large">
+                Designed by <a href="https://robdavis.dev" target="_blank">Rob Davis</a> and <a href="https://mojitotomato.work/work" target="_blank">Monica Warren</a>
+                <img src="images/cone_bw.png"> Copyright © <span x-text="year"></span> Carnell Car School
             </div>
-        </div>
-        <div class="cone" id="vehicle">
-            <img src="images/divider_vehicle.png">
-        </div>
-        <div class="panel">
-            <div class="vehicle">
-                <div class="vehicle__details mobile-padding">
-                    <div>
-                        This compact SUV is the perfect car in which to learn to drive. With a high driving position and great visibility you will find it easy to see potential hazards on the roads. The short wheel-base and small turning circle make all those technical maneuvers a breeze to learn and easy to repeat time and time again. 
-                    </div>
-                    <p>
-                        With a slightly lower-than-standard gear ratio and an engine designed to produce lots of torque low in the rev-range, the Jimny is less likely to stall than most other small vehicles on the roads today. This all contributes to a simpler, easier and more straight-forward driving experience with Carnell Car School. 
-                    </p>
-                    <p>
-                        This late model Jimny has a manual gearbox, fitted with bar-type instructor pedals (Dual Controls Queensland) and a full set of instructor mirrors.
-                    </p>
-                    <p>
-                        Automatic or Manual lessons in your own car are by negotiation. Please contact David to talk through the requirements if you wish to take lessons in your own vehicle.
-                    </p>
-                </div>
-                <div class="vehicle__image">
-                    <img src="images/jimmy.jpg">
-                    <div>"The Mighty Jimny"</div>
-                </div>
+            <div class="footer__credits footer__credits--small">
+                <img src="images/cone_bw.png"> <span>Designed by <a href="https://robdavis.dev" target="_blank">Rob Davis</a> and <a href="https://mojitotomato.work/work" target="_blank">Monica Warren</a></span>
+                <img src="images/cone_bw.png"><span>Copyright © <span x-text="year"></span> Carnell Car School</span>
             </div>
-        </div>
-        <div class="cone" id="services">
-            <img src="images/divider_services.png">
-        </div>
-        <div class="panel">
-            <div class="panel__content">
-                <div class="services__description mobile-padding">
-                    <p>Carnell Car School offers a wide array of driver education and instructional services. Please note all courses and lessons to be paid for by Cash or Bank Transfer.
-                </div>
-                <div class="services">
-                    <div class="service service--1">
-                        <div class="service__name">Manual Driving Lessons</div>
-                        <div class="service__price">$80 <div>per hour</div></div>
-                        <div class="service__description">Individual Manual Driving Lessons are undertaken in the Suzuki Jimny and are usually 1 hour long, but longer lessons are possible upon request. Beginning and ending driving lessons at different locations is possible, but please discuss this with David prior to the commencement of the lesson if you would like to make use of this option.</div>
-                        <div class="service__location">
-                            <a href="#nogo" class="service__location--marker">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </a>
-                            <span>Start and finish wherever it is convenient for the learner, often from a home, school or work address within 20 minutes drive of Mackenzie, Qld.</span>
-                        </div>
-                    </div>
-                    <div class="service service--2">
-                        <div class="service__name">Basic Maintenance Course</div>
-                        <div class="service__price">$150 <div>per person</div></div>
-                        <div class="service__description">The Basic Maintenance Course is a 3 hour practical course that is presented to small groups. This course will help you take care of your vehicle more comprehensively and will include the following: a brief overview of vehicle parts and function, a brief overview of some things to look for when purchasing used cars, refueling a vehicle, checking tread levels on tyre, changing a tyre, checking and adjusting tyre pressures, checking and topping up fluid levels, checking and changing fuses, checking and change light bulbs, changing a battery. There will be a Carnell Car School vehicle onsite as an example or if participant doesn't have access to their own vehicle, but it is recommended that participants bring and learn on their own vehicle as every vehicle is unique.</div>
-                        <div class="service__location">
-                            <a href="#nogo" class="service__location--marker">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </a>
-                            <span class="service__location--address">RACQ Mobility Centre, 1753-1799 Mount Cotton Rd, Cornubia QLD 4130</span>
-                        </div>
-                    </div>
-                    <div class="service service--3">
-                        <div class="service__name">Offroad Driving Course</div>
-                        <div class="service__price">$120 <div>per vehicle</div></div>
-                        <div class="service__description">The Offroad Driving Course is 3 hour course undertaken in a small group setting at the RACQ Mobility Centre at Mt Cotton/Cornubia using their purpose-built 4WD training facility. Find out what you and your vehicle are capable of, with water crossings; articulation tests; steep inclines and declines; ramp over, approach and departure angle testing; tight, windy, low-traction trails; and much more. Starting out with a walk-through, talk-through of basic trails and finishing off with a self-directed exploration of any and all available obstacle and/or trail within the 4WD facility, there is something for everyone in this course.</div>
-                        <div class="service__location">
-                            <a href="#nogo" class="service__location--marker">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </a>
-                            <span class="service__location--address">RACQ Mobility Centre, 1753-1799 Mount Cotton Rd, Cornubia QLD 4130</span>
-                        </div>
-                    </div>
-                    <div class="service service--4">
-                        <div class="service__name">Driving Test Package</div>
-                        <div class="service__price">$200 <div>in total</div></div>
-                        <div class="service__description">The Driving Test Package includes a 1 hour pre-test drive and briefing, use of the Carnell Car School vehicle to complete the practical driving test with the TMR assessor, and a post-test drive to student's preferred location (home, school, work etc.) within a 10km radius of the test centre.</div>
-                        <div class="service__location">
-                            <span class="service__location--address">Available at the following TMR Locations</span>
-                            
-                            <a href="#nogo" class="service__location--marker">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </a>
-                            <span class="service__location--address">Greenslopes Shopping Mall 700 Logan Road Corner, Plimsoll St, Greenslopes QLD 4120</span>
-
-                            <a href="#nogo" class="service__location--marker">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </a>
-                            <span class="service__location--address">139 Tingal Rd, Wynnum QLD 4178</span>
-
-                            <a href="#nogo" class="service__location--marker">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </a>
-                            <span class="service__location--address">Ross Court Centre, 197/207 Bloomfield St, Cleveland QLD 4163</span>
-
-                            <a href="#nogo" class="service__location--marker">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </a>
-                            <span class="service__location--address">14 Primrose St, Sherwood QLD 4075</span>
-
-                            <a href="#nogo" class="service__location--marker">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </a>
-                            <span class="service__location--address">Jacaranda Ave, Logan Central QLD 4114</span>
-                        </div>
-                    </div>
-                    <div class="service service--5">
-                        <div class="service__name">Skid Pan Experience</div>
-                        <div class="service__price">$200 <div>per person</div></div>
-                        <div class="service__description">The Skid Pan Experience is a 3 hour window of opportunity to put your vehicle through it's paces in a controlled, low-grip environment, without the danger of other road users. Learn how it feels to lose control of your vehicle due to lack of grip. Learn how to recognise and control a slide and how to avoid losing control in wet and slippery conditions. Discuss your new-found knowledge and skills with other course participants while you wait for your next turn on the slippery stuff. At the end of the course take those skills with you and apply them in the real world to help keep yourself and other road-users safer when road conditions are less than ideal. Please note, that there is a wash-down facility on-site to ensure that the slipping and sliding doesn't unexpectedly follow you onto the public road at the end of the event. </div>
-                        <div class="service__location">
-                            <a href="#nogo" class="service__location--marker"><i class="fa-solid fa-location-dot"></i></a>
-                            <span class="service__location--address">RACQ Mobility Centre, 1753-1799 Mount Cotton Rd, Cornubia QLD 4130</span>
-                        </div>
-                    </div>
-                    <div class="service service--6">
-                        <div class="service__name">Learner Driver Works Package</div>
-                        <div class="service__price">$6000 <div>in total</div></div>
-                        <div class="service__description">The Learner Driver Works Package includes advice and practice for the PrepL Online Learning course, 100 log-book hours of driving lessons (including at least 10 night hours), a small group basic maintenance course, booking and payment for a practical driving test, test package, a 5 year licence (upon passing the practical driving test).</div>
-                        <div class="service__location">
-                            <a href="#nogo" class="service__location--marker"><i class="fa-solid fa-location-dot"></i></a>
-                            <span class="service__location--address">Localtion to be arranged during booking</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer class="footer" x-data="{ year: new Date().getFullYear() }">
-        <img src="images/footer_large.png" class="footer__image footer__image--large">
-        <img src="images/footer_small.png" class="footer__image footer__image--small">
-        <div class="footer__credits footer__credits--large">
-            Designed by <a href="https://robdavis.dev" target="_blank">Rob Davis</a> and <a href="https://mojitotomato.work/work" target="_blank">Monica Warren</a>
-            <img src="images/cone_bw.png"> Copyright © <span x-text="year"></span> Carnell Car School</div>
-        </div>
-        <div class="footer__credits footer__credits--small">
-            <img src="images/cone_bw.png"> <span>Designed by <a href="https://robdavis.dev" target="_blank">Rob Davis</a> and <a href="https://mojitotomato.work/work" target="_blank">Monica Warren</a></span>
-            <img src="images/cone_bw.png"><span>Copyright © <span x-text="year"></span> Carnell Car School</div></span>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
