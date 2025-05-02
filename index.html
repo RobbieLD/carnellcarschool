@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <script defer src="assets/js/version.js"></script>
     <script defer src="assets/js/data.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
@@ -266,10 +267,12 @@
             <div class="footer__credits footer__credits--large">
                 Designed by <a href="https://robdavis.dev" target="_blank">Rob Davis</a> and <a href="https://mojitotomato.work/work" target="_blank">Monica Warren</a>
                 <img src="images/cone_bw.png"> Copyright © <span x-text="year"></span> Carnell Car School
+                <img src="images/cone_bw.png"> <span x-text="'Version: ' + window.version"></span>
             </div>
             <div class="footer__credits footer__credits--small">
                 <img src="images/cone_bw.png"> <span>Designed by <a href="https://robdavis.dev" target="_blank">Rob Davis</a> and <a href="https://mojitotomato.work/work" target="_blank">Monica Warren</a></span>
                 <img src="images/cone_bw.png"><span>Copyright © <span x-text="year"></span> Carnell Car School</span>
+                <img src="images/cone_bw.png"><span x-text="'Version: ' + window.version"></span>
             </div>
         </footer>
     </div>

@@ -42,7 +42,7 @@ body {
 
     @media screen and (max-width: $tablet-break) {
         padding: 0em;
-        grid-template-rows: auto auto auto 20em;
+        grid-template-rows: auto auto 20em;
     }
 }
 
@@ -78,7 +78,7 @@ body {
         &--small {
             display: none;
             grid-template-columns: auto auto;
-            grid-template-rows: auto auto;
+            grid-template-rows: auto auto auto;
             width: fit-content;
             align-items: center;
 
