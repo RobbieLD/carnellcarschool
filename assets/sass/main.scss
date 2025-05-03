@@ -523,6 +523,8 @@ body {
     align-items: center;
     margin: auto;
     max-width: $site-width;
+    padding-left: 2em;
+    padding-right: 2em;
 
     @media screen and (max-width: $tablet-break) {
         grid-template-columns: auto 1fr;
