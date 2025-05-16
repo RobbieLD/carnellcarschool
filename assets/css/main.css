@@ -34,6 +34,7 @@ body {
   top: 0;
   background-color: white;
   z-index: 9;
+  transition: 0.5s;
 }
 .header--shadow {
   box-shadow: 0 5px 6px -2px rgba(0, 0, 0, 0.2);
@@ -483,6 +484,8 @@ body {
   align-items: center;
   margin: auto;
   max-width: 1200px;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 @media screen and (max-width: 900px) {
   .nav {
@@ -491,7 +494,6 @@ body {
     padding: 1em;
     position: sticky;
     top: 0;
-    background-color: white;
   }
 }
 
@@ -681,6 +683,72 @@ a:hover {
     padding-left: 1em;
     padding-right: 1em;
   }
+}
+
+.show {
+  display: block;
+}
+
+.overlay {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.74);
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+  position: fixed;
+  display: grid;
+  top: 0;
+  left: 0;
+}
+
+.subscribe {
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: row;
+  padding: 2em;
+  max-width: 30em;
+  border-radius: 1em;
+}
+@media screen and (max-width: 900px) {
+  .subscribe {
+    border-radius: 0em;
+  }
+}
+.subscribe__close {
+  padding-bottom: 1em;
+  display: grid;
+  color: #082F59;
+}
+.subscribe__close i {
+  font-size: 2em;
+  cursor: pointer;
+  justify-self: end;
+}
+.subscribe__close i:hover {
+  color: #047eb3;
+}
+.subscribe__input {
+  margin-top: 1em;
+  border-radius: 0.5em;
+  padding: 1em;
+  margin-top: 1em;
+  border: solid 2px rgb(227, 227, 227);
+}
+.subscribe__button {
+  padding: 1em;
+  background: #082F59;
+  color: white;
+  border-radius: 0.5em;
+  text-align: center;
+  margin-top: 1em;
+  cursor: pointer;
+}
+.subscribe__button:hover {
+  background-color: #047eb3;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

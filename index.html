@@ -17,11 +17,12 @@
     <script defer src="assets/js/data.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
-<body id="top" x-data="{ top: true }" @scroll.window="top = window.scrollY < 10">
+<body id="top" x-data="{ top: true, popup: false, open: false, year: new Date().getFullYear() }" @scroll.window="top = window.scrollY < 10">
     <div class="header" :class="top ? '' : 'header--shadow'">
-        <nav class="nav" x-data="{ open: false }">
+        <nav class="nav">
             <a href="#top">
-                <img src="images/logo.png" class="logo">
+                <!-- TEMP -->
+                <img src="images/logo.png" class="logo" x-on:click="popup = true">
             </a>
             <div class="menu menu__desktop">
                 <a href="#instructor" class="button">Instructor</a>
@@ -261,7 +262,7 @@
                 </div>
             </div>
         </main>
-        <footer class="footer" x-data="{ year: new Date().getFullYear() }">
+        <footer class="footer">
             <img src="images/footer_large.png" class="footer__image footer__image--large">
             <img src="images/footer_small.png" class="footer__image footer__image--small">
             <div class="footer__credits footer__credits--large">
@@ -275,6 +276,16 @@
                 <img src="images/cone_bw.png"><span x-text="'Version: ' + window.version"></span>
             </div>
         </footer>
+    </div>
+    <div class="overlay" x-show="popup">
+        <div class="subscribe">
+            <div class="subscribe__close"><i class="fa-solid fa-circle-xmark" x-on:click="popup = false"></i></div>
+            <div>
+                Enter your email address and we'll keep in touch about up comming offers and events. You can unsubscribe at any time.
+            </div>
+            <input class="subscribe__input" id="email" type="text" placeholder="Email Address">
+            <div class="subscribe__button" x-on:click="popup = window.subscribeToEmail()">Subsscribe</div>
+        </div>
     </div>
 </body>
 </html>

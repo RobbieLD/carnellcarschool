@@ -53,6 +53,7 @@ body {
     top: 0;
     background-color: white;
     z-index: 9;
+    transition: 0.5s;
 
     &--shadow {
         box-shadow: 0 5px 6px -2px rgba(0, 0, 0, 0.2);
@@ -532,7 +533,7 @@ body {
         padding: 1em;
         position: sticky;
         top: 0; 
-        background-color: white;
+        
     }
 }
 
@@ -734,5 +735,76 @@ a {
     @media screen and (max-width: $mobile-break) {
         padding-left: 1em;
         padding-right: 1em;
+    }
+}
+
+.show {
+    display: block;
+}
+
+.overlay {
+    display: none;
+    background-color: rgb(0 0 0 / 74%);
+    height: 100vh;
+    width: 100%;
+    z-index: 99;
+    position: fixed;
+    display: grid;
+    top: 0;
+    left: 0;
+}
+
+.subscribe {
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    display: grid;
+    grid-auto-flow: row;
+    padding: 2em;
+    max-width: 30em;
+    border-radius: 1em;
+
+    @media screen and (max-width: $tablet-break) {
+        border-radius: 0em;
+    }
+
+    &__close {
+        padding-bottom: 1em;
+        display: grid;
+        color: $primary-color;
+        
+        i {
+            font-size: 2em;
+            cursor: pointer;
+            justify-self: end;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    &__input {
+        margin-top: 1em;
+        border-radius: 0.5em;
+        padding: 1em;
+        margin-top: 1em;
+        border: solid 2px rgb(227 227 227);
+    }
+
+    &__button {
+        padding: 1em;
+        background: $primary-color;
+        color: $on-primary-color;
+        border-radius: 0.5em;
+        text-align: center;
+        margin-top: 1em;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $secondary-color;
+            color: $on-secondary-color;
+        }
     }
 }

@@ -11,3 +11,11 @@ window.announcements = () => {
     const today = new Date();
     return announcements.filter(f => new Date(f.from) <= today && new Date(f.to) >= today)
 }
+
+window.subscribeToEmail = () => {
+    const el = document.getElementById("email")
+
+    console.log(el.value)
+
+    return false
+}
