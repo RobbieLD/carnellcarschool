@@ -47,8 +47,7 @@ body {
 }
 
 .header {
-    padding-top: 2em;
-    padding-bottom: 1em;
+    padding: 1em;
     position: sticky;
     top: 0;
     background-color: white;
@@ -695,6 +694,25 @@ a {
 }
 
 /* Special */
+.newsletter {
+
+    margin-top: 2em;
+    margin-bottom: 3em;
+
+    a {
+        padding: 0.5em 1em;
+        margin: 1em;
+        background-color: $primary-color;
+        color: $on-primary-color;
+        font-size: 1.3em;
+        border-radius: 0.5em;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+}
+
 .contact {
     display: grid;
     grid-auto-flow: column;

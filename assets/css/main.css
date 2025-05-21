@@ -28,8 +28,7 @@ body {
 }
 
 .header {
-  padding-top: 2em;
-  padding-bottom: 1em;
+  padding: 1em;
   position: sticky;
   top: 0;
   background-color: white;
@@ -483,6 +482,8 @@ body {
   align-items: center;
   margin: auto;
   max-width: 1200px;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 @media screen and (max-width: 900px) {
   .nav {
@@ -643,6 +644,22 @@ a:hover {
 }
 
 /* Special */
+.newsletter {
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+.newsletter a {
+  padding: 0.5em 1em;
+  margin: 1em;
+  background-color: #082F59;
+  color: white;
+  font-size: 1.3em;
+  border-radius: 0.5em;
+}
+.newsletter a:hover {
+  color: #f5ce4a;
+}
+
 .contact {
   display: grid;
   grid-auto-flow: column;
