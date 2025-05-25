@@ -305,7 +305,7 @@ body {
   padding-bottom: 0.5em;
 }
 .vehicle__image img {
-  max-width: 100%;
+  width: 100%;
   border-top-right-radius: 1em;
   border-top-left-radius: 1em;
 }
