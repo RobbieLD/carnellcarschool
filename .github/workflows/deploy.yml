@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["master", "test"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -45,7 +45,24 @@ jobs:
 
       - name: Set Version
         run: echo 'window.version=${{ github.run_number }};' > assets/js/version.js
+
+      - name: Checkout Test branch
+        uses: actions/checkout@v4
+        with:
+          path: test
+          ref: 'test'
         
+      - name: Compile SASS for TEST
+        uses: gha-utilities/sass-build@v0.6.0
+        with:
+          source: |
+            test/assets/sass/main.scss
+          destination: |
+            test/assets/css/main.css
+
+      - name: Set Version
+        run: echo 'window.version=${{ github.run_number }} (test);' > test/assets/js/version.js
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
