@@ -1,7 +1,7 @@
 const announcements = [
     {
-        title: 'July Madness',
-        body: 'For the month of July all lessons are 10% off!',
+        title: 'Skidpan Day',
+        body: 'Fancy a Skidpan day? Sign up to our newsletter to find out when the next one will be',
         from: '2025-01-01',
         to: '2025-07-31'
     }
