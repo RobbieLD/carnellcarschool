@@ -61,7 +61,7 @@ jobs:
             test/assets/css/main.css
 
       - name: Set Version
-        run: echo 'window.version=${{ github.run_number }} (test);' > test/assets/js/version.js
+        run: echo 'window.version="${{ github.run_number }}-test";' > test/assets/js/version.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
