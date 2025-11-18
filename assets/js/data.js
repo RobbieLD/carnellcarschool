@@ -1,9 +1,9 @@
 const announcements = [
     {
         title: 'Skidpan Day',
-        body: 'Fancy a Skidpan day? Sign up to our newsletter to find out when the next one will be',
-        from: '2025-10-23',
-        to: '2025-11-30'
+        body: 'Next Skidpan day - Saturday 10th of January - 12:30pm to 4:30pm',
+        from: '2025-11-18',
+        to: '2026-01-10'
     }
 ]
 
